@@ -68,14 +68,14 @@ namespace ImSequencer
       int cy = (int)(io.MousePos.y);
       static float framePixelWidth = 10.f * kDpi();
       static float framePixelWidthTarget = 10.f * kDpi();
-      int legendWidth = 200 * kDpi();
+      int legendWidth = (int)(200 * kDpi());
 
       static int movingEntry = -1;
       static int movingPos = -1;
       static int movingPart = -1;
       int delEntry = -1;
       int dupEntry = -1;
-      int ItemHeight = 20 * kDpi();
+      int ItemHeight = (int)(20 * kDpi());
 
       bool popupOpened = false;
       int sequenceCount = sequence->GetItemCount();
@@ -234,7 +234,7 @@ namespace ImSequencer
             bool baseIndex = ((i % modFrameCount) == 0) || (i == sequence->GetFrameMax() || i == sequence->GetFrameMin());
             bool halfIndex = (i % halfModFrameCount) == 0;
             int px = (int)canvas_pos.x + int(i * framePixelWidth) + legendWidth - int(firstFrameUsed * framePixelWidth);
-            int tiretStart = baseIndex ? 4  * kDpi(): (halfIndex ? 10  * kDpi(): 14 * kDpi());
+            int tiretStart = (int)(baseIndex ? 4  * kDpi(): (halfIndex ? 10  * kDpi(): 14 * kDpi()));
             int tiretEnd = baseIndex ? regionHeight : ItemHeight;
 
             if (px <= (canvas_size.x + canvas_pos.x) && px >= (canvas_pos.x + legendWidth))
